@@ -84,6 +84,10 @@ namespace Celedon
                 return;
             }
 
+            if(context.Depth > 1) {
+                return;
+            }
+
             foreach (var autoNumberId in autoNumberIdList)
             {
                 var autoNumber = context.OrganizationService.Retrieve("cel_autonumber", autoNumberId, new ColumnSet(
